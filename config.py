@@ -4,7 +4,7 @@ BOT_TOKEN = "7773900178:AAEQEQAXahfYAVsol1EUcwYPKa0Or2cPCdg"
 OWNER_ID = 6266529037  # replace with your Telegram user ID
 
 # Webhook settings
-WEBHOOK_URL = "https://"
+WEBHOOK_URL = "https://cheerful-kimberlee-filetolink1286-a70f100b.koyeb.app/"
 PORT = 8080
 
 # MongoDB
