@@ -1,21 +1,16 @@
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
-API_ID = int(os.getenv("API_ID"))
-API_HASH = os.getenv("API_HASH")
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-OWNER_ID = int(os.getenv("OWNER_ID"))
+API_ID = 12345678  # replace with your actual API ID
+API_HASH = "your_api_hash"
+BOT_TOKEN = "your_bot_token"
+OWNER_ID = 123456789  # replace with your Telegram user ID
 
 # Webhook settings
-WEBHOOK_URL = os.getenv("WEBHOOK_URL")
-PORT = int(os.getenv("PORT", 8080))
+WEBHOOK_URL = "https://your-koyeb-or-render-url"
+PORT = 8080
 
 # MongoDB
-MONGO_URI = os.getenv("MONGO_URI")
+MONGO_URI = "your_mongodb_uri"
 
-# Start message images (unlimited support)
+# Start message images
 START_IMAGES = [
     "https://i.ibb.co/ynjcqYdZ/photo-2025-04-06-20-48-47-7490304985767346192.jpg",
     "https://i.ibb.co/hBnMzYm/photo-2025-04-07-20-50-00.jpg"
