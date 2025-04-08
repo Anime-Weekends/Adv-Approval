@@ -1,5 +1,6 @@
 from pyrofork import Client, filters
 from pyrofork.types import Message
+from pyrofork.idle import idle
 from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID
 from modules.database import (
     add_user, get_users, add_admin, remove_admin,
@@ -103,7 +104,7 @@ async def broadcast(_, message: Message):
         return await message.reply("Only owner can broadcast.")
     if not message.reply_to_message:
         return await message.reply("Reply to a message to broadcast.")
-    
+
     users = await get_users()
     sent = 0
     failed = 0
@@ -123,7 +124,7 @@ async def forward_broadcast(_, message: Message):
         return await message.reply("Only owner can forward broadcast.")
     if not message.reply_to_message:
         return await message.reply("Reply to a message to forward broadcast.")
-    
+
     users = await get_users()
     sent = 0
     failed = 0
@@ -147,4 +148,14 @@ async def reject_all(_, message: Message):
     await message.reply("All users auto rejected (placeholder).")
 
 
-app.run()
+# --------------------- START POLLING ---------------------
+
+if __name__ == "__main__":
+    import asyncio
+
+    async def main():
+        await app.start()
+        print("Bot is running with polling...")
+        await idle()
+
+    asyncio.run(main())
